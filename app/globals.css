@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	-webkit-font-smoothing: antialiased;
+	scroll-behavior: smooth;
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+
+@layer base {
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 222.2 84% 4.9%;
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 84% 4.9%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 222.2 84% 4.9%;
+		--primary: 222.2 47.4% 11.2%;
+		--primary-foreground: 210 40% 98%;
+		--secondary: 210 40% 96.1%;
+		--secondary-foreground: 222.2 47.4% 11.2%;
+		--muted: 210 40% 96.1%;
+		--muted-foreground: 215.4 16.3% 46.9%;
+		--accent: 210 40% 96.1%;
+		--accent-foreground: 222.2 47.4% 11.2%;
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 210 40% 98%;
+		--border: 214.3 31.8% 91.4%;
+		--input: 214.3 31.8% 91.4%;
+		--ring: 222.2 84% 4.9%;
+		--chart-1: 12 76% 61%;
+		--chart-2: 173 58% 39%;
+		--chart-3: 197 37% 24%;
+		--chart-4: 43 74% 66%;
+		--chart-5: 27 87% 67%;
+		--radius: 0.5rem;
+	}
+	.dark {
+		--background: 222.2 84% 4.9%;
+		--foreground: 210 40% 98%;
+		--card: 222.2 84% 4.9%;
+		--card-foreground: 210 40% 98%;
+		--popover: 222.2 84% 4.9%;
+		--popover-foreground: 210 40% 98%;
+		--primary: 210 40% 98%;
+		--primary-foreground: 222.2 47.4% 11.2%;
+		--secondary: 217.2 32.6% 17.5%;
+		--secondary-foreground: 210 40% 98%;
+		--muted: 217.2 32.6% 17.5%;
+		--muted-foreground: 215 20.2% 65.1%;
+		--accent: 217.2 32.6% 17.5%;
+		--accent-foreground: 210 40% 98%;
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 210 40% 98%;
+		--border: 217.2 32.6% 17.5%;
+		--input: 217.2 32.6% 17.5%;
+		--ring: 212.7 26.8% 83.9%;
+		--chart-1: 220 70% 50%;
+		--chart-2: 160 60% 45%;
+		--chart-3: 30 80% 55%;
+		--chart-4: 280 65% 60%;
+		--chart-5: 340 75% 55%;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	::-webkit-scrollbar {
+		display: none;
+	}
+	body {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+		@apply bg-background text-foreground;
+	}
+}
+
+/* Common styles */
+@layer components {
+	.separator {
+		@apply w-px bg-white;
+	}
+}
+
+/* Navigation */
+@layer components {
+	.navi {
+		@apply flex justify-between items-center px-4 sm:px-10 py-3 sm:py-4 lg:py-4 xl:py-4 lg:px-7 xl:px-12 2xl:px-20 bg-[#f3f4f6] dark:bg-[#171718] z-10 sticky top-0 left-0 right-0;
+	}
+	.navi-link {
+		@apply relative lg:font-medium xl:font-semibold xl:mx-2 mx-1 text-[#171718] cursor-pointer 2xl:text-[22px] xl:text-[18px] md:text-[16px] sm:text-[14px] w-fit lg:block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#31ADDB] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center hidden;
+	}
+	.nav-link-mobile {
+		@apply relative mb-[16px] font-medium text-[#171718] cursor-pointer text-[21px] w-fit md:block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#31ADDB] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center;
+	}
+	.nav-btn-main {
+		@apply pl-0 md:pl-[26rem] lg:pl-[24rem] hover:lg:pl-[18.6rem];
+	}
+	.nav-btn {
+		@apply bg-[#125872] hover:bg-slate-600 text-white text-[14px] hover:md:text-[20.1px] md:text-[20px] hover:lg:text-[16.1px] lg:text-[16px] font-medium rounded-[25px] py-2 px-4 cursor-pointer;
+	}
+	.nav-cta {
+		@apply bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-lg;
+	}
+}
+
+/* Footer */
+@layer components {
+	/* From Tablet to Large Screen Devices */
+	.footer {
+		@apply bg-[#061418] xl:block hidden lg:block pt-10 lg:px-10 2xl:px-20;
+	}
+	.footer-flex {
+		@apply flex justify-between xl:px-20;
+	}
+	.footer-logo {
+		@apply flex gap-4 items-center justify-start;
+	}
+	.footer-address {
+		@apply mt-10 w-80;
+	}
+}
+
+/* Landing Page */
+
+@layer components {
+	/* Hero */
+	.hero {
+		@apply bg-[#125872] p-4;
+	}
+	/* Partners */
+	@keyframes infinite-scroll {
+		0% {
+			transform: translateX(0%);
+		}
+		100% {
+			transform: translateX(-100%);
+		}
+	}
+	.animate-infinite-scroll {
+		animation: infinite-scroll 2000s linear infinite;
+	}
+}
+
+/* Pages */
+@layer components {
+	/* About */
+	.about {
+		--primary-color: #31addb;
+		--secondary-color: #125872;
+		--text-color: #333;
+		--bg-color: #f9f9f9;
+	}
+	.about-hero {
+		background: linear-gradient(
+			135deg,
+			var(--primary-color),
+			var(--secondary-color)
+		);
+		color: white;
+		text-align: center;
+		clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+		@apply py-28 p-10;
+	}
+	.about-hero h1 {
+		@apply text-5xl font-semibold mb-5;
+	}
+	.about-hero p {
+		@apply font-[400];
+	}
+
+	/* Services */
+	.servi-base {
+		--servi-grad-color-1: theme(colors.#125872);
+		--servi-grad-color-2: theme(colors.#125872);
+		--text-color: #333;
+		--bg-color: #f9f9f9;
+	}
+	.servi-banner {
+		background: linear-gradient(
+			135deg,
+			var(--servi-grad-color-1),
+			var(--servi-grad-color-2)
+		);
+		color: white;
+		text-align: center;
+		clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+		@apply py-28 p-10;
+	}
+
+	/* Doctors */
+	.doctors-light {
+		@apply bg-gradient-to-r from-gray-100 to-gray-500;
+	}
+	.doctors-dark {
+		@apply bg-gradient-to-r from-gray-800 to-gray-900;
+	}
+	.bg-offer {
+		background: linear-gradient(45deg, #0e3c4d 13%, #1a8fba 100%);
+		box-shadow: inset 1px 1px 10px 1px rgba(99, 98, 98, 0.699);
+	}
+
+	/* Contact Us */
+	.bmage {
+		@apply bg-[url('/websiteImages/pexels-karolina-grabowska-4476635.png')] bg-cover;
+	}
+	.card {
+		background: linear-gradient(45deg, #125872 13%, #22a7d8 100%);
+	}
+	.card:hover {
+		background: linear-gradient(45deg, #125872 100%, #22a7d8 60%);
+	}
+	.icon-ani {
+		transition: 0.5s ease;
+	}
+	.icon-ani:hover {
+		transform: scale(1.05);
+		box-shadow: 0 0 4px 2px rgba(99, 98, 98, 0.699);
+	}
+	.gradr {
+		mask-image: linear-gradient(
+			to right,
+			hsl(0 0% 0% / 0),
+			hsl(0 0% 0% / 1) 10%,
+			hsl(0 0% 0% / 1) 90%,
+			hsl(0 0% 0% / 0)
+		);
+	}
+
+	/* Careers */
+
+	.careers-container {
+		@apply container mx-auto py-[6rem];
+	}
+	.careers-content {
+		@apply container py-12;
+	}
+	.no-positions {
+		@apply bg-gray-200 rounded-lg p-8 text-center mt-8 shadow-lg;
+	}
+	.careers-button {
+		@apply inline-block text-white py-2 px-4 no-underline rounded-md font-bold transition-colors duration-300 ease-in mt-4 bg-[#1ea8da] hover:bg-[#1cb7ef];
+	}
+	.benefits {
+		@apply bg-[var(--light-gray)]  xl:mt-12;
+	}
+	.benefits h3 {
+		@apply font-bold text-xl;
+	}
+	.benefits-grid {
+		@apply grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8 mt-8;
+	}
+	.benefits-item {
+		@apply text-center bg-gray-100 p-7 rounded-xl pb-10 border-gray-300 border-[1px];
+	}
+	.benefits-icon {
+		@apply text-4xl text-[var(--primary-color)] mb-4;
+	}
+}
