@@ -1,0 +1,13 @@
+module.exports = {
+  extends: [
+    'next/core-web-vitals',
+    'plugin:@typescript-eslint/recommended'
+  ],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
+  rules: {
+    '@typescript-eslint/no-require-imports': 'error',
+    'react/no-unescaped-entities': 'off',
+    '@next/next/no-img-element': 'warn'
+  },
+}; 
